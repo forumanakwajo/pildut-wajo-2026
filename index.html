@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Duta Anak Kabupaten Wajo 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .bg-pattern {
+            background-color: #f3f4f6;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-pattern min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+
+    <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-indigo-700 mb-2">PEMILIHAN DUTA ANAK KAB. WAJO 2026</h1>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-700">Are you ready to be next Duta Anak Wajo ?</h2>
+            <p class="text-gray-500 mt-2">Silakan lengkapi data diri dan unggah berkas persyaratan Anda di bawah ini.</p>
+        </div>
+
+        <div id="formContainer" class="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div class="bg-indigo-600 px-6 py-4">
+                <h3 class="text-lg font-medium text-white">Formulir Pendaftaran</h3>
+            </div>
+            
+            <form id="registrationForm" class="p-6 sm:p-8 space-y-6">
+                
+                <div class="space-y-4">
+                    <h4 class="text-md font-semibold text-gray-900 border-b pb-2">Informasi Pribadi</h4>
+                    
+                    <div>
+                        <label for="nama" class="block text-sm font-medium text-gray-700">1. Nama Lengkap</label>
+                        <input type="text" id="nama" name="nama" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-3 border" placeholder="Masukkan nama lengkap sesuai identitas">
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="tempat_lahir" class="block text-sm font-medium text-gray-700">2. Tempat Lahir</label>
+                            <input type="text" id="tempat_lahir" name="tempat_lahir" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-3 border" placeholder="Contoh: Sengkang">
+                        </div>
+                        <div>
+                            <label for="tanggal_lahir" class="block text-sm font-medium text-gray-700">3. Tanggal Lahir</label>
+                            <input type="date" id="tanggal_lahir" name="tanggal_lahir" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-3 border">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="asal_sekolah" class="block text-sm font-medium text-gray-700">4. Asal Sekolah</label>
+                        <input type="text" id="asal_sekolah" name="asal_sekolah" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-3 border" placeholder="Contoh: SMA Negeri 1 Wajo">
+                    </div>
+                </div>
+
+                <div class="space-y-4 pt-4">
+                    <h4 class="text-md font-semibold text-gray-900 border-b pb-2">5. Pengumpulan Berkas</h4>
+                    <p class="text-xs text-red-500">* Format yang didukung: PDF, JPG, PNG. Maksimal 10MB per file.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Formulir Pendaftaran</label>
+                            <input type="file" id="file_formulir" accept=".pdf,image/jpeg,image/png" required class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 border rounded-md">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Surat Pernyataan Kesediaan Aktif sebagai Duta Anak Kab. Wajo 2026</label>
+                            <input type="file" id="file_pernyataan" accept=".pdf,image/jpeg,image/png" required class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 border rounded-md">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Surat Izin Orang Tua</label>
+                            <input type="file" id="file_izin_ortu" accept=".pdf,image/jpeg,image/png" required class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 border rounded-md">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Surat Izin Sekolah</label>
+                            <input type="file" id="file_izin_sekolah" accept=".pdf,image/jpeg,image/png" required class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 border rounded-md">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Akta Kelahiran (Kartu Identitas)</label>
+                            <input type="file" id="file_akta" accept=".pdf,image/jpeg,image/png" required class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 border rounded-md">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Foto Close Up (Latar Merah & Ukuran 3x4 cm)</label>
+                            <input type="file" id="file_foto" accept=".pdf,image/jpeg,image/png" required class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 border rounded-md">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">SK Forum Anak (Khusus Pengurus Forum Anak)</label>
+                            <input type="file" id="file_sk" accept=".pdf,image/jpeg,image/png" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 border rounded-md">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-6">
+                    <button type="submit" id="submitBtn" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors">
+                        Kirim Pendaftaran
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div id="successContainer" class="hidden bg-white rounded-2xl shadow-xl overflow-hidden text-center p-8 sm:p-12">
+            <div class="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-green-100 mb-6">
+                <svg class="h-10 w-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Pendaftaran Berhasil!</h2>
+            <p class="text-lg text-gray-600 mb-8">Terima kasih telah mendaftar sebagai Calon Duta Anak Kabupaten Wajo 2026.</p>
+            
+            <div class="bg-indigo-50 rounded-xl p-6 border border-indigo-100">
+                <h3 class="text-xl font-bold text-indigo-900 mb-2">Langkah Selanjutnya</h3>
+                <p class="text-indigo-700 mb-6">Silakan bergabung dengan Grup WhatsApp resmi peserta untuk mendapatkan informasi terkait tahapan seleksi selanjutnya.</p>
+                <a href="https://chat.whatsapp.com/CzIGjER00D8DRC07zEgvv6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full text-white bg-green-500 hover:bg-green-600 md:text-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                    </svg>
+                    Gabung Grup WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // URL Google Apps Script Anda
+        const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz2KOy8aNVO2SlhUqFYUdjhbgR0RxJrsFruDE-LCPv3QALevvmEdRiAlMoGjioSfo3-/exec"; 
+
+        const fileToBase64 = (file) => new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => {
+                const base64Data = reader.result.split(',')[1];
+                resolve({
+                    filename: file.name,
+                    mimeType: file.type,
+                    data: base64Data
+                });
+            };
+            reader.onerror = error => reject(error);
+        });
+
+        document.getElementById('registrationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const originalBtnText = submitBtn.innerHTML;
+            
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Mengunggah Berkas... Mohon tunggu
+            `;
+
+            try {
+                const formData = {
+                    nama: document.getElementById('nama').value,
+                    tempat_lahir: document.getElementById('tempat_lahir').value,
+                    tanggal_lahir: document.getElementById('tanggal_lahir').value,
+                    asal_sekolah: document.getElementById('asal_sekolah').value,
+                    berkas: {}
+                };
+
+                const fileInputs = [
+                    { id: 'file_formulir', name: 'Formulir_Pendaftaran' },
+                    { id: 'file_pernyataan', name: 'Surat_Pernyataan' },
+                    { id: 'file_izin_ortu', name: 'Surat_Izin_Ortu' },
+                    { id: 'file_izin_sekolah', name: 'Surat_Izin_Sekolah' },
+                    { id: 'file_akta', name: 'Akta_Kelahiran' },
+                    { id: 'file_foto', name: 'Foto_Close_Up' },
+                    { id: 'file_sk', name: 'SK_Forum_Anak' }
+                ];
+
+                const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+
+                for (let input of fileInputs) {
+                    const fileElement = document.getElementById(input.id);
+                    if (fileElement && fileElement.files && fileElement.files.length > 0) {
+                        const file = fileElement.files[0];
+                        
+                        if (file.size > MAX_FILE_SIZE) {
+                            Swal.fire({
+                                icon: 'warning',
+                                title: 'Ukuran File Terlalu Besar',
+                                text: `File untuk bagian ${input.name.replace(/_/g, ' ')} melebihi 10MB. Silakan kompres file Anda terlebih dahulu.`,
+                                confirmButtonColor: '#4f46e5'
+                            });
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = originalBtnText;
+                            return;
+                        }
+
+                        const fileData = await fileToBase64(file);
+                        fileData.filename = `${input.name}_${formData.nama.replace(/\s+/g, '_')}.${fileData.filename.split('.').pop()}`;
+                        formData.berkas[input.name] = fileData;
+                    }
+                }
+
+                if (GOOGLE_APPS_SCRIPT_URL !== "") {
+                    // PERBAIKAN: mode no-cors dihilangkan dan diganti dengan header text/plain
+                    // Ini memungkinkan data sukses terbaca oleh Google Apps Script di hosting manapun.
+                    const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'text/plain;charset=utf-8',
+                        },
+                        body: JSON.stringify(formData),
+                    });
+
+                    // Kita bisa mengecek apakah fetch berhasil
+                    if (!response.ok) {
+                        throw new Error('Jaringan bermasalah atau URL Script salah.');
+                    }
+                }
+
+                // Tampilkan layar sukses
+                document.getElementById('formContainer').classList.add('hidden');
+                document.getElementById('successContainer').classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            } catch (error) {
+                console.error("Error:", error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Terjadi Kesalahan',
+                    text: 'Gagal mengirim data. Pastikan koneksi internet stabil dan URL Script sudah benar.',
+                });
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }
+        });
+    </script>
+</body>
+</html>
